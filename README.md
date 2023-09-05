@@ -220,6 +220,7 @@ sudo apt update
 ```
 
 ### Step 2: Install Dependencies
+A couple of dependencies and tools are required for the installation  of Python3 to be successfully installed. Therefore, install the dependencies as shown:
 ```sh
 sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev && \
 sudo apt autoremove -y && \
@@ -229,16 +230,167 @@ sudo apt autoclean -y
 ### Step 3: Install Python3 on Debian
 
 
-At the time of writing this guide, the latest Python release is Python 3.11 which was released on December 6, 2022.
-However, the latest version that is currently provided by Debian repositories is Python 3.9.
-Depending on your requirements, you choose to either install the version provided by default in the repository or install the latest version provided the Python.
-To install Python from Debian’s APT repository, run the command:
+- At the time of writing this guide, the latest Python release is Python 3.11 which was released on December 6, 2022.
+- However, the latest version that is currently provided by Debian repositories is Python 3.9.
+- Depending on your requirements, you choose to either install the version provided by default in the repository or install the latest version provided the Python.
+- To install Python from Debian’s APT repository, run the command:
 
 ```sh
 sudo apt install python3 -y && \
 sudo apt autoremove -y && \
 sudo apt autoclean -y
 ```
+
+
+- As earlier mentioned, **this method does not provide the latest release.**
+- In order to install the latest release, **you need to manually download** the **latest binary file* from the official Python download page.
+- The page provides source files which are in Gzipped or XZ compressed in form of tarball files.
+- Well, to download the latest Python binary file, we use the wget command as follows.
+- The version of Python is likely to change:
+
+```sh
+wget https://www.python.org/ftp/python/3.11.1/Python-3.11.1.tgz
+```
+
+- Once the extraction of the tarball is complete, navigate into the uncompressed Python3 folder.
+
+```sh
+cd Python-3.11.1
+```
+
+- Then run the following command to check if all dependencies to install Python3.11 have been satisfied.
+
+```sh
+sudo ./configure --enable-optimizations
+```
+
+- Next, The -–enable-optimizations option runs multiple tests and optimizes the Python binary.
+- Then run the make command to compile the Python  source code.
+- This takes quite a while, so you might consider taking a break at this point.
+  ```sh
+  sudo make -j 2
+  ```
+
+- Once the build process is complete, install the Python binaries as shown.
+  ```sh
+  sudo make altinstall
+  ```
+
+- Also Read 
+
+[Ruby on Rails vs Python – What’s the Difference (Pros and Cons)](https://cloudinfrastructureservices.co.uk/ruby-on-rails-vs-python-whats-the-difference/)
+
+### Step 4: Verify Python3.11 Installation
+
+```SH
+python3.11 -V
+```
+
+
+From the output, you can see that we have successfully installed Python3.11 on Debian.
+
+
+### Step 5: Install PIP ( Package Manager )
+
+- In Python, PIP , an acronym for  Preferred Installer Program, is a package manager that allows you to install packages and libraries that are not part of the standard Python library.
+- It’s the most widely used package management tool for Python.
+- To install PIP, run the following command.
+```sh
+sudo apt install python3-pip
+```
+- You confirm the version of PIP installed by running the command:
+```sh
+$ pip3 -V
+```
+- Alternatively, you run:
+```sh
+$ pip3 --version
+```
+The output below confirms that we have installed the latest version of pip, which as of this guide, is version 20.3.4
+
+### Step 6: Set up A Virtual Environment ( Optional )
+
+- After all, a virtual environment is a Python folder structure that is created on top of the current Python installation. In addition, it provides an isolated environment that helps to keep dependencies needed by different Python projects separate. Hence, a virtual environment comes in handy when you are working on different projects, each with different versions of package versions and dependencies.
+
+- By default, all projects residing on your system use the same directories to store and retrieve third party libraries or site packages. Suppose you are working with different versions of Django ( v 4.1.5 and v 4.0 ). Python does not have a way of distinguishing between these versions in the ‘site-package’ directory. What happens is that both versions of Django are placed in the same directory under the same name.  In turn, this creates conflict and is a huge problem for developers. 
+
+- And this is where creating a virtual environment is beneficial. Setting up isolated environments for each project provides autonomy and greater control over how different versions of packages are managed. You set up or create as many virtual environments as you want depending on the number of projects at hand.
+
+- As earlier mentioned, a virtual environment is a folder or directory with a few scripts to enable it work as an environment.
+
+#### Install Venv Package
+
+- To create a virtual environment, you need to install the venv package as shown.
+
+```sh
+$ sudo apt install python3-venv -y
+```
+
+- Once installed, you can now create a virtual environments for your projects. First , you need to create a directory for your shiny new environment using the mkdir command followed by the path to the directory.  In this case, we are creating a new directory in our home directory.
+
+```sh
+$ mkdir test_directory
+$ cd test_directory
+```
+
+- Once you are in the directory that you want to create the isolated environment, proceed and use the following syntax to create the virtual environment.
+
+```sh
+python3 -m venv /path/to/new/virtual/environment
+```
+
+- In our case, we will createa virtual environment called my_environment
+```sh
+$ python3 -m venv my_environment
+```
+
+- The command simply creates a new directory called my_environment which contains  a virtual environment configuration file and  directories that contain scripts and essential files which work together to provide an isolated environment from the rest of the operating system.
+
+- The directories in the virtual environment include  bin, include, lib, lib64 and share.
+create python3 virtual environment	
+
+In order to start using your virtual environment, run the following command to activate it.
+
+```sh
+source my_environment/bin/activate
+```
+
+The command prompt will now be prefixed by the name of the environment, in this case, my_environment.
+
+
+### Step 7: Create a Simple Python Program
+
+Now that we have created our virtual environment, we are going to create a simple Python program that prompts for two numbers and  adds them the output of which is printed on the terminal. This helps us to know if our virtual environment is working as intended
+
+#### Using the nano text editor, we create a python file as shown.
+
+```sh
+nano simple_program.py
+```
+#### Add the following lines
+```python				
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+total = str(num1 + num2)
+print("The sum of two numbers is: " + total)
+```
+#### Save the changes and exit. Then run the python file as shown.
+```python				
+python  simple_program.py
+```
+The program you just created  prompts you to enter two numbers and later print out the sum total of the numbers provided.
+How to install Python 3 in Debian 11/10. run a simple python program Debian 11/10	
+
+To exit the virtual environment, simply run the deactivate  command:
+```python
+deactivate
+```
+
+Thank you for reading How to install Python 3 in Debian 11/10. We shall conclude. 
+
+### How to install Python 3 in Debian 11/10 Conclusion
+
+Congratulations for coming this far. You have learned how to install Python3 on Debian 11/10. We have also demonstrated how to set up a virtual environment for running your python projects in isolation from other projects on your host system.
 
 
 <br /><br /><br />
