@@ -111,7 +111,7 @@ The complete installation take around ~60 min depending power of the computer an
 
 20. [SSH](#ssh---github-keys)
 
-21. [~/Flo/Dotfiles as git repo](#flodotfiles-as-git-repo)
+21. [~/Fab/Dotfiles as git repo](#fabdotfiles-as-git-repo)
 
 22. [AppImageLauncher](#appimagelauncher---install)
 
