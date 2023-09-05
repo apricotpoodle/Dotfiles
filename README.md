@@ -218,6 +218,14 @@ sudo apt autoclean -y
 ```sh
 sudo apt update
 ```
+
+### Step 2: Install Dependencies
+```sh
+sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev && \
+sudo apt autoremove -y && \
+sudo apt autoclean -y
+```
+
 ### Step 3: Install Python3 on Debian
 
 
