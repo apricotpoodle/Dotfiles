@@ -53,7 +53,7 @@ The complete installation take around ~60 min depending power of the computer an
 
    1. [Folder structure](#create-folder-structure)
    2. [Install packages](#install-dependencies)
-   3. [How to install Python 3 in Debian][#install-Python-On-Debian]
+   3. [How to install Python 3 in Debian](#install-Python-On-Debian)
 
 2. [Oh-my-zsh](#oh-my-zsh---install)
 
