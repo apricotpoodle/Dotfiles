@@ -209,8 +209,11 @@ sudo apt autoremove -y && \
 sudo apt autoclean -y
 ```
 
+
 <br /><br /><br />
+
 ## How to install Python 3 in Debian
+
 ### Step 1: Update Package Repositories
 ```sh
 sudo apt update
