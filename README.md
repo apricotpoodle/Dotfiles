@@ -123,3 +123,66 @@ The complete installation take around ~60 min depending power of the computer an
 
 ---
 
+<br />
+
+## If you install Ubuntu with VirtualBox
+
+Here is few more steps if you start a fresh Ubuntu install with VirtualBox.
+
+Log in as root user.
+
+```sh
+su
+```
+
+Add your user to 'sudo' group. In my case, my user is called 'flo'.
+
+```sh
+sudo usermod -a -G sudo flo
+```
+
+Install `sudo` package
+
+```sh
+apt install sudo
+```
+
+If you still have an issue like `you user is not in the sudoers file...`, you need to add manually your user.
+
+```sh
+su
+```
+
+```sh
+sudo visudo
+```
+
+Write this line just after `Root ALL=(ALL:ALL) ALL`.
+
+```sh
+flo ALL=(ALL:ALL) ALL
+```
+
+Close your terminal and re open-it.
+
+<br />
+
+Update/Upgrade packages, update snap packages and delete pre-install useless games, programs and tools.<br />
+You need to close Firefox first and run those commands.
+
+```sh
+sudo apt update && \
+sudo apt upgrade -y && \
+sudo snap refresh firefox snapd snapd-desktop-integration && \
+sudo apt remove -y thunderbird rhythmbox simple-scan shotwell remmina libreoffice-impress libreoffice-draw cheese \
+aisleriot gnome-sudoku gnome-mines gnome-mahjongg gnome-todo gnome-todo-common && \
+sudo apt autoremove -y && \
+sudo apt autoclean -y
+```
+
+You also need to update version of `core` and version of `gnome` by going to Ubuntu Software tool (aka Snap Store).
+
+To update `snap-store` itself, you need to first kill his process, then run `sudo snap refresh snap-store`.
+
+<br /><br /><br />
+
