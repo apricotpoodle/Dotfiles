@@ -189,7 +189,7 @@ To update `snap-store` itself, you need to first kill his process, then run `sud
 ## Create folder structure
 
 ```sh
-mkdir ~/Flo ~/Flo/Dev ~/Flo/Downloads ~/Flo/Apps ~/Flo/Dotfiles && \
+mkdir ~/Fab ~/Fab/Dev ~/Fab/Downloads ~/Fab/Apps ~/Fab/Dotfiles && \
 rm -rf ~/Desktop ~/Videos ~/Templates ~/Public ~/Pictures ~/Music ~/Downloads ~/Documents
 ```
 
@@ -225,17 +225,17 @@ Open terminal.
 <br />
 
 Create needed folder and files, install custom theme `ys-flo.zsh-theme` and install plugins `zsh-autosuggestions` and `zsh-syntax-highlighting`.<br />
-https://github.com/Flo-Slv/Dotfiles/blob/main/oh-my-zsh/ys-flo.zsh-theme<br />
+https://github.com/Fab-Slv/Dotfiles/blob/main/oh-my-zsh/ys-flo.zsh-theme<br />
 https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh<br />
 https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 
 ```sh
-mkdir -p ~/Flo/Dotfiles/oh-my-zsh && \
-wget -P ~/.oh-my-zsh/custom/themes https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/oh-my-zsh/ys-flo.zsh-theme && \
+mkdir -p ~/Fab/Dotfiles/oh-my-zsh && \
+wget -P ~/.oh-my-zsh/custom/themes https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/oh-my-zsh/ys-flo.zsh-theme && \
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && \
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-mv ~/.oh-my-zsh ~/Flo/Dotfiles/oh-my-zsh && \
-cd ~/Flo/Dotfiles && \
+mv ~/.oh-my-zsh ~/Fab/Dotfiles/oh-my-zsh && \
+cd ~/Fab/Dotfiles && \
 stow -t ~/ oh-my-zsh
 ```
 
@@ -277,14 +277,14 @@ Close and re open terminal.
 
 ## First option: install and config NEOVIM from a bash script
 
-https://github.com/Flo-Slv/Dotfiles/blob/main/flo-neovim-install.sh
+https://github.com/Fab-Slv/Dotfiles/blob/main/flo-neovim-install.sh
 
 I developed a script who will create the needed folder structure and install/config Neovim.
 
 Warning: this script only run on Linux (sorry for users of Windows and Mac OS) and only if you have Node.js installed.
 
 ```sh
-wget -P ~/ https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/flo-neovim-install.sh && \
+wget -P ~/ https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/flo-neovim-install.sh && \
 chmod +x ~/flo-neovim-install.sh
 ```
 
@@ -295,7 +295,7 @@ cd ~ && ./flo-neovim-install.sh
 Open `packer.lua`.
 
 ```sh
-nvim ~/Flo/Dotfiles/neovim/lua/FloSlv/packer.lua
+nvim ~/Fab/Dotfiles/neovim/lua/FabSlv/packer.lua
 ```
 
 Then run this command: `:PackerSync`
@@ -305,7 +305,7 @@ Save and close: `:wq`
 Re open `packer.lua`
 
 ```sh
-nvim ~/Flo/Dotfiles/neovim/lua/FloSlv/packer.lua
+nvim ~/Fab/Dotfiles/neovim/lua/FabSlv/packer.lua
 ```
 
 And wait for LSP servers installation and Treesitter parsers installation.
@@ -334,7 +334,7 @@ ripgrep fd-find silversearcher-ag mlocate zoxide python3-pip libsqlite3-dev bat
 2. Clone Neovim repository
 
 ```sh
-git clone -b release-0.9 https://github.com/neovim/neovim ~/Flo/Apps/Neovim
+git clone -b release-0.9 https://github.com/neovim/neovim ~/Fab/Apps/Neovim
 ```
 
 <br />
@@ -342,7 +342,7 @@ git clone -b release-0.9 https://github.com/neovim/neovim ~/Flo/Apps/Neovim
 3. Compile sources
 
 ```sh
-cd ~/Flo/Apps/Neovim && \
+cd ~/Fab/Apps/Neovim && \
 make CMAKE_BUILD_TYPE=RelWithDebInfo && \
 sudo make install
 ```
@@ -379,10 +379,10 @@ IMPORTANT: Replace `FloSlv` by your user name.
 
 ```sh
 mkdir ~/.config/nvim && \
-mkdir -p ~/Flo/Dotfiles/neovim/lua && \
-mkdir -p ~/Flo/Dotfiles/neovim/after/plugin && \
-mkdir -p ~/Flo/Dotfiles/neovim/after/ftplugin && \
-mkdir -p ~/Flo/Dotfiles/neovim/lua/FloSlv/undodir
+mkdir -p ~/Fab/Dotfiles/neovim/lua && \
+mkdir -p ~/Fab/Dotfiles/neovim/after/plugin && \
+mkdir -p ~/Fab/Dotfiles/neovim/after/ftplugin && \
+mkdir -p ~/Fab/Dotfiles/neovim/lua/FabSlv/undodir
 ```
 
 <br />
@@ -390,18 +390,18 @@ mkdir -p ~/Flo/Dotfiles/neovim/lua/FloSlv/undodir
 3. Add config<br />
 
 Create `options.lua`, `keymaps.lua`, `utils.lua`, `packer.lua` and `init.lua`.<br />
-https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/options.lua<br />
-https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/keymaps.lua<br />
-https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/utils.lua<br  />
-https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/packer.lua<br />
-https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/init.lua
+https://github.com/Fab-Slv/Dotfiles/blob/main/neovim/lua/FabSlv/options.lua<br />
+https://github.com/Fab-Slv/Dotfiles/blob/main/neovim/lua/FabSlv/keymaps.lua<br />
+https://github.com/Fab-Slv/Dotfiles/blob/main/neovim/lua/FabSlv/utils.lua<br  />
+https://github.com/Fab-Slv/Dotfiles/blob/main/neovim/lua/FabSlv/packer.lua<br />
+https://github.com/Fab-Slv/Dotfiles/blob/main/neovim/init.lua
 
 ```sh
-wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/options.lua && \
-wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/keymaps.lua && \
-wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/utils.lua && \
-wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/packer.lua && \
-wget -P ~/Flo/Dotfiles/neovim https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/init.lua
+wget -P ~/Fab/Dotfiles/neovim/lua/FabSlv https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/lua/FabSlv/options.lua && \
+wget -P ~/Fab/Dotfiles/neovim/lua/FabSlv https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/lua/FabSlv/keymaps.lua && \
+wget -P ~/Fab/Dotfiles/neovim/lua/FabSlv https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/lua/FabSlv/utils.lua && \
+wget -P ~/Fab/Dotfiles/neovim/lua/FabSlv https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/lua/FabSlv/packer.lua && \
+wget -P ~/Fab/Dotfiles/neovim https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/init.lua
 ```
 
 <br />
@@ -410,12 +410,12 @@ NB: You don't need the next two files: `autosave.lua` and `autorun.lua`.
 They are related to my personal projects in Rust and they are not stable and relevent for you.
 
 Create `autosave.lua` and `autorun.lua`.<br />
-https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/autosave.lua<br />
-https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/autorun.lua
+https://github.com/Fab-Slv/Dotfiles/blob/main/neovim/lua/FabSlv/autosave.lua<br />
+https://github.com/Fab-Slv/Dotfiles/blob/main/neovim/lua/FabSlv/autorun.lua
 
 ```sh
-wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/autosave.lua && \
-wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/autorun.lua
+wget -P ~/Fab/Dotfiles/neovim/lua/FabSlv https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/lua/FabSlv/autosave.lua && \
+wget -P ~/Fab/Dotfiles/neovim/lua/FabSlv https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/lua/FabSlv/autorun.lua
 ```
 
 <br />
@@ -423,37 +423,37 @@ wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-S
 4. Set up all plugins
 
 ```sh
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/autopairs.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/colorscheme.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/colorful-winsep.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/comment.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/dashboard.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/gitsigns.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/glow.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/indent-blankline.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/lsp.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/lualine.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/luasnip.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/null-ls.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-autopairs.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-cmp.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-colorizer.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-notify.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-tree.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-treesitter.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-web-devicons.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/rust-tools.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/tailwindcss-colorizer-cmp.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/telescope.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/todo-comments.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/trouble.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/undotree.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/vim-dadbod-ui.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/vim-illuminate.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/vimade.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/which-key.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/wilder.lua &&\
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/winbar.lua
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/autopairs.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/colorscheme.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/colorful-winsep.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/comment.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/dashboard.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/gitsigns.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/glow.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/indent-blankline.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/lsp.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/lualine.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/luasnip.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/null-ls.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/nvim-autopairs.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/nvim-cmp.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/nvim-colorizer.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/nvim-notify.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/nvim-tree.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/nvim-treesitter.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/nvim-web-devicons.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/rust-tools.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/tailwindcss-colorizer-cmp.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/telescope.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/todo-comments.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/trouble.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/undotree.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/vim-dadbod-ui.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/vim-illuminate.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/vimade.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/which-key.lua && \
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/wilder.lua &&\
+wget -P ~/Fab/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/neovim/after/plugin/winbar.lua
 ```
 
 <br />
@@ -478,7 +478,7 @@ npm i -g neovim
 6. Stow
 
 ```sh
-cd ~/Flo/Dotfiles && \
+cd ~/Fab/Dotfiles && \
 stow -t ~/.config/nvim neovim
 ```
 
@@ -489,7 +489,7 @@ stow -t ~/.config/nvim neovim
 Open `packer.lua`.
 
 ```sh
-nvim ~/Flo/Dotfiles/neovim/lua/FloSlv/packer.lua
+nvim ~/Fab/Dotfiles/neovim/lua/FabSlv/packer.lua
 ```
 
 Then run this command: `:PackerSync`
@@ -499,7 +499,7 @@ Save and close: `:wq`
 Re open `packer.lua`
 
 ```sh
-nvim ~/Flo/Dotfiles/neovim/lua/FloSlv/packer.lua
+nvim ~/Fab/Dotfiles/neovim/lua/FabSlv/packer.lua
 ```
 
 And wait for LSP servers installation and Treesitter parsers installation.
@@ -536,7 +536,7 @@ sudo apt install -y libevent-dev ncurses-dev build-essential bison
 3. Fetch Tmux from Git repo
 
 ```sh
-git clone https://github.com/tmux/tmux.git ~/Flo/Apps/Tmux
+git clone https://github.com/tmux/tmux.git ~/Fab/Apps/Tmux
 ```
 
 <br />
@@ -544,7 +544,7 @@ git clone https://github.com/tmux/tmux.git ~/Flo/Apps/Tmux
 4. Compile sources
 
 ```sh
-cd ~/Flo/Apps/Tmux && \
+cd ~/Fab/Apps/Tmux && \
 sh autogen.sh && \
 ./configure && \
 make && \
@@ -566,8 +566,8 @@ tmux -V
 1. Create `.tmux` and `tmux-powerline-custom-themes` folders.
 
 ```sh
-mkdir -p ~/Flo/Dotfiles/tmux/.tmux && \
-mkdir -p ~/Flo/Dotfiles/tmux/.tmux/tmux-powerline-custom-themes
+mkdir -p ~/Fab/Dotfiles/tmux/.tmux && \
+mkdir -p ~/Fab/Dotfiles/tmux/.tmux/tmux-powerline-custom-themes
 ```
 
 <br />
@@ -575,22 +575,22 @@ mkdir -p ~/Flo/Dotfiles/tmux/.tmux/tmux-powerline-custom-themes
 2. Clone TMUX Plugin Manager and TMUX Powerline.
 
 ```sh
-git clone https://github.com/tmux-plugins/tpm ~/Flo/Dotfiles/tmux/.tmux/plugins/tpm && \
-git clone https://github.com/erikw/tmux-powerline.git ~/Flo/Dotfiles/tmux/.tmux/plugins/tmux-powerline
+git clone https://github.com/tmux-plugins/tpm ~/Fab/Dotfiles/tmux/.tmux/plugins/tpm && \
+git clone https://github.com/erikw/tmux-powerline.git ~/Fab/Dotfiles/tmux/.tmux/plugins/tmux-powerline
 ```
 
 <br />
 
 3. Fetch `.tmux.conf`, `.tmux-powerlinerc` and `flo-theme.sh` files from my GitHub repo.
 
-https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.conf<br />
-https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.powerlinerc<br />
-https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux/tmux-powerline-custom-themes/flo-theme.sh
+https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/tmux/.tmux.conf<br />
+https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/tmux/.tmux.powerlinerc<br />
+https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/tmux/.tmux/tmux-powerline-custom-themes/flo-theme.sh
 
 ```sh
-wget -P ~/Flo/Dotfiles/tmux https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.conf && \
-wget -P ~/Flo/Dotfiles/tmux https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.powerlinerc && \
-wget -P ~/Flo/Dotfiles/tmux/.tmux/tmux-powerline-custom-themes https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux/tmux-powerline-custom-themes/flo-theme.sh
+wget -P ~/Fab/Dotfiles/tmux https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/tmux/.tmux.conf && \
+wget -P ~/Fab/Dotfiles/tmux https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/tmux/.tmux.powerlinerc && \
+wget -P ~/Fab/Dotfiles/tmux/.tmux/tmux-powerline-custom-themes https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/tmux/.tmux/tmux-powerline-custom-themes/flo-theme.sh
 ```
 
 <br />
@@ -598,8 +598,8 @@ wget -P ~/Flo/Dotfiles/tmux/.tmux/tmux-powerline-custom-themes https://raw.githu
 4. Add my custom `flo-theme.sh` as `default.sh` theme for tmux-powerline.
 
 ```sh
-mv ~/Flo/Dotfiles/tmux/.tmux/plugins/tmux-powerline/themes/default.sh ~/Flo/Dotfiles/tmux/.tmux/plugins/tmux-powerline/themes/default.sh.old && \
-ln -s ~/Flo/Dotfiles/tmux/.tmux/tmux-powerline-custom-themes/flo-theme.sh ~/Flo/Dotfiles/tmux/.tmux/plugins/tmux-powerline/themes/default.sh
+mv ~/Fab/Dotfiles/tmux/.tmux/plugins/tmux-powerline/themes/default.sh ~/Fab/Dotfiles/tmux/.tmux/plugins/tmux-powerline/themes/default.sh.old && \
+ln -s ~/Fab/Dotfiles/tmux/.tmux/tmux-powerline-custom-themes/flo-theme.sh ~/Fab/Dotfiles/tmux/.tmux/plugins/tmux-powerline/themes/default.sh
 ```
 
 <br />
@@ -607,7 +607,7 @@ ln -s ~/Flo/Dotfiles/tmux/.tmux/tmux-powerline-custom-themes/flo-theme.sh ~/Flo/
 5. Stow
 
 ```sh
-cd ~/Flo/Dotfiles && \
+cd ~/Fab/Dotfiles && \
 stow -t ~/ tmux
 ```
 
@@ -624,7 +624,7 @@ tmux
 ```
 
 ```sh
-nvim ~/Flo/Dotfiles/tmux/.tmux.conf
+nvim ~/Fab/Dotfiles/tmux/.tmux.conf
 ```
 
 ```sh
@@ -642,14 +642,14 @@ Close Tmux then close and re open terminal.
 ## ZSH - config
 
 Create `.zshrc`.<br />
-https://github.com/Flo-Slv/Dotfiles/blob/main/zsh/.zshrc<br />
+https://github.com/Fab-Slv/Dotfiles/blob/main/zsh/.zshrc<br />
 
 ```sh
 rm -rf ~/.zshrc && \
-mkdir -p ~/Flo/Dotfiles/zsh && \
-wget -P ~/Flo/Dotfiles/zsh https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/zsh/.zshrc && \
-mv ~/.zshenv ~/Flo/Dotfiles/zsh && \
-cd ~/Flo/Dotfiles && \
+mkdir -p ~/Fab/Dotfiles/zsh && \
+wget -P ~/Fab/Dotfiles/zsh https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/zsh/.zshrc && \
+mv ~/.zshenv ~/Fab/Dotfiles/zsh && \
+cd ~/Fab/Dotfiles && \
 stow -t ~/ zsh
 ```
 
@@ -669,18 +669,18 @@ Install
 
 ```sh
 cd ~ && \
-git clone https://github.com/alacritty/alacritty.git ~/Flo/Apps/Alacritty && \
+git clone https://github.com/alacritty/alacritty.git ~/Fab/Apps/Alacritty && \
 rustup override set stable && \
 rustup update stable && \
 sudo apt install -y cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 && \
-cd ~/Flo/Apps/Alacritty && \
+cd ~/Fab/Apps/Alacritty && \
 cargo build --release
 ```
 
 To have Desktop icon
 
 ```sh
-cd ~/Flo/Apps/Alacritty && \
+cd ~/Fab/Apps/Alacritty && \
 sudo cp target/release/alacritty /usr/local/bin && \
 sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg && \
 sudo desktop-file-install extra/linux/Alacritty.desktop && \
@@ -690,7 +690,7 @@ sudo update-desktop-database
 To have manual page
 
 ```sh
-cd ~/Flo/Apps/Alacritty && \
+cd ~/Fab/Apps/Alacritty && \
 sudo mkdir -p /usr/local/share/man/man1 && \
 gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null && \
 gzip -c extra/alacritty-msg.man | sudo tee /usr/local/share/man/man1/alacritty-msg.1.gz > /dev/null
@@ -701,9 +701,9 @@ Config
 ```sh
 cd ~ && \
 mkdir -p ~/.config/alacritty && \
-mkdir -p ~/Flo/Dotfiles/alacritty && \
-wget -P ~/Flo/Dotfiles/alacritty https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/alacritty/alacritty.yml && \
-cd ~/Flo/Dotfiles && \
+mkdir -p ~/Fab/Dotfiles/alacritty && \
+wget -P ~/Fab/Dotfiles/alacritty https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/alacritty/alacritty.yml && \
+cd ~/Fab/Dotfiles && \
 stow -t ~/.config/alacritty alacritty
 ```
 
@@ -718,9 +718,9 @@ To get emoji on Alacritty terminal.
 cd ~ && \
 sudo apt install -y fonts-noto-color-emoji && \
 mkdir -p ~/.config/fontconfig && \
-mkdir -p ~/Flo/Dotfiles/fontconfig && \
-wget -P ~/Flo/Dotfiles/fontconfig https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/fontconfig/fonts.conf && \
-cd ~/Flo/Dotfiles && \
+mkdir -p ~/Fab/Dotfiles/fontconfig && \
+wget -P ~/Fab/Dotfiles/fontconfig https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/fontconfig/fonts.conf && \
+cd ~/Fab/Dotfiles && \
 stow -t ~/.config/fontconfig fontconfig
 ```
 
@@ -747,12 +747,12 @@ A new terminal has opened, close it for now.
 <br />
 
 Create `kitty.conf`<br />
-Download this file as 'kitty.conf': https://github.com/Flo-Slv/Dotfiles/blob/main/kitty/kitty.conf
+Download this file as 'kitty.conf': https://github.com/Fab-Slv/Dotfiles/blob/main/kitty/kitty.conf
 
 ```sh
-mkdir -p ~/Flo/Dotfiles/kitty && \
-wget -P ~/Flo/Dotfiles/kitty https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/kitty/kitty.conf && \
-cd ~/Flo/Dotfiles && \
+mkdir -p ~/Fab/Dotfiles/kitty && \
+wget -P ~/Fab/Dotfiles/kitty https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/kitty/kitty.conf && \
+cd ~/Fab/Dotfiles && \
 stow -t ~/.config/kitty kitty
 ```
 
@@ -779,11 +779,11 @@ Close terminal and open Kitty terminal.
 Go to https://www.nerdfonts.com/font-downloads to check if link is the lastest release version !
 
 ```sh
-wget -P ~/Flo/Downloads https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip && \
+wget -P ~/Fab/Downloads https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip && \
 cd ~/.local/share && \
 mkdir fonts && \
 cd fonts && \
-mv ~/Flo/Downloads/Hack.zip . && \
+mv ~/Fab/Downloads/Hack.zip . && \
 unzip Hack.zip && \
 rm -rf Hack.zip
 ```
@@ -826,9 +826,9 @@ curl -sS https://starship.rs/install.sh | sh
 ```
 
 ```sh
-mkdir ~/Flo/Dotfiles/starship && \
-wget -P ~/Flo/Dotfiles/starship https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/starship/starship.toml && \
-cd ~/Flo/Dotfiles && \
+mkdir ~/Fab/Dotfiles/starship && \
+wget -P ~/Fab/Dotfiles/starship https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/starship/starship.toml && \
+cd ~/Fab/Dotfiles && \
 stow -t ~/.config starship
 ```
 
@@ -855,10 +855,10 @@ Close terminal and re open it.
 
 ```sh
 mkdir ~/.config/rofi && \
-mkdir -p ~/Flo/Dotfiles/rofi && \
-wget -P ~/Flo/Dotfiles/rofi https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/rofi/config.rasi && \
-wget -P ~/Flo/Dotfiles/rofi https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/rofi/flo-theme.rasi && \
-cd ~/Flo/Dotfiles && \
+mkdir -p ~/Fab/Dotfiles/rofi && \
+wget -P ~/Fab/Dotfiles/rofi https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/rofi/config.rasi && \
+wget -P ~/Fab/Dotfiles/rofi https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/rofi/flo-theme.rasi && \
+cd ~/Fab/Dotfiles && \
 stow -t ~/.config/rofi rofi
 ```
 
@@ -887,15 +887,15 @@ sudo apt autoremove -y
 Go to https://github.com/polybar/polybar/releases to check if link is the last release version.
 
 ```sh
-wget -P ~/Flo/Downloads https://github.com/polybar/polybar/releases/download/3.6.3/polybar-3.6.3.tar.gz && \
-cd ~/Flo/Downloads && \
+wget -P ~/Fab/Downloads https://github.com/polybar/polybar/releases/download/3.6.3/polybar-3.6.3.tar.gz && \
+cd ~/Fab/Downloads && \
 tar xvzf polybar-3.6.3.tar.gz && \
 rm -rf polybar-3.6.3.tar.gz
 ```
 
 ```sh
-mv polybar-3.6.3 ~/Flo/Apps/Polybar-3.6.3 && \
-cd ~/Flo/Apps/Polybar-3.6.3 && \
+mv polybar-3.6.3 ~/Fab/Apps/Polybar-3.6.3 && \
+cd ~/Fab/Apps/Polybar-3.6.3 && \
 mkdir build && \
 cd build
 ```
@@ -912,11 +912,11 @@ Create all necessaries folder and files.
 
 ```sh
 mkdir ~/.config/polybar && \
-mkdir ~/Flo/Dotfiles/polybar && \
-wget -P ~/Flo/Dotfiles/polybar https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/polybar.sh && \
-chmod +x ~/Flo/Dotfiles/polybar/polybar.sh && \
-wget -P ~/Flo/Dotfiles/polybar https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/config.ini && \
-cd ~/Flo/Dotfiles && \
+mkdir ~/Fab/Dotfiles/polybar && \
+wget -P ~/Fab/Dotfiles/polybar https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/polybar/polybar.sh && \
+chmod +x ~/Fab/Dotfiles/polybar/polybar.sh && \
+wget -P ~/Fab/Dotfiles/polybar https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/polybar/config.ini && \
+cd ~/Fab/Dotfiles && \
 stow -t ~/.config/polybar polybar
 ```
 
@@ -935,9 +935,9 @@ sudo apt install -y fonts-font-awesome
 
 ```sh
 mkdir ~/.config/i3 && \
-mkdir -p ~/Flo/Dotfiles/i3 && \
-wget -P ~/Flo/Dotfiles/i3 https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/i3/config && \
-cd ~/Flo/Dotfiles && \
+mkdir -p ~/Fab/Dotfiles/i3 && \
+wget -P ~/Fab/Dotfiles/i3 https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/i3/config && \
+cd ~/Fab/Dotfiles && \
 stow -t ~/.config/i3 i3
 ```
 
@@ -955,16 +955,16 @@ Login.
 
 https://github.com/aristocratos/btop#installation
 
-Download latest release (x86_64-linux-musl version in my case) into `~/Flo/Downloads`.
+Download latest release (x86_64-linux-musl version in my case) into `~/Fab/Downloads`.
 
 Go to https://github.com/aristocratos/btop/releases to check if link is the lastest release version.
 
 ```sh
-wget -P ~/Flo/Downloads https://github.com/aristocratos/btop/releases/download/v1.2.13/btop-x86_64-linux-musl.tbz && \
-cd ~/Flo/Apps && \
+wget -P ~/Fab/Downloads https://github.com/aristocratos/btop/releases/download/v1.2.13/btop-x86_64-linux-musl.tbz && \
+cd ~/Fab/Apps && \
 mkdir Btop && \
-mv ~/Flo/Downloads/btop-x86_64-linux-musl.tbz ~/Flo/Apps/Btop && \
-cd ~/Flo/Apps/Btop && \
+mv ~/Fab/Downloads/btop-x86_64-linux-musl.tbz ~/Fab/Apps/Btop && \
+cd ~/Fab/Apps/Btop && \
 tar -xjf btop-x86_64-linux-musl.tbz && \
 rm btop-x86_64-linux-musl.tbz && \
 cd btop && sudo make install
@@ -981,9 +981,9 @@ Close and re open terminal.
 Just copy/paste those lines into your terminal but change your email and name before type Enter !
 
 ```sh
-mkdir -p ~/Flo/Dotfiles/git && \
-touch ~/Flo/Dotfiles/git/.gitconfig && \
-cat << EOF >> ~/Flo/Dotfiles/git/.gitconfig
+mkdir -p ~/Fab/Dotfiles/git && \
+touch ~/Fab/Dotfiles/git/.gitconfig && \
+cat << EOF >> ~/Fab/Dotfiles/git/.gitconfig
 [user]
     email = {your-email}
     name = {your-name}
@@ -993,7 +993,7 @@ EOF
 ```
 
 ```sh
-cd ~/Flo/Dotfiles && \
+cd ~/Fab/Dotfiles && \
 stow -t ~/ git
 ```
 
@@ -1013,8 +1013,8 @@ npm install -g git-cz
 Create `changelog.config.js`
 
 ```sh
-wget -P ~/Flo/Dotfiles/git https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/git/changelog.config.js && \
-cd ~/Flo/Dotfiles && \
+wget -P ~/Fab/Dotfiles/git https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/git/changelog.config.js && \
+cd ~/Fab/Dotfiles && \
 stow -t ~/ git
 ```
 
@@ -1036,10 +1036,10 @@ cargo install gitui
 
 ```sh
 mkdir ~/.config/gitui && \
-mkdir -p ~/Flo/Dotfiles/gitui && \
-wget -P ~/Flo/Dotfiles/gitui https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/gitui/theme.ron && \
-wget -P ~/Flo/Dotfiles/gitui https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/gitui/key_bindings.ron && \
-cd ~/Flo/Dotfiles && \
+mkdir -p ~/Fab/Dotfiles/gitui && \
+wget -P ~/Fab/Dotfiles/gitui https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/gitui/theme.ron && \
+wget -P ~/Fab/Dotfiles/gitui https://raw.githubusercontent.com/Fab-Slv/Dotfiles/main/gitui/key_bindings.ron && \
+cd ~/Fab/Dotfiles && \
 stow -t ~/.config/gitui gitui
 ```
 
@@ -1113,7 +1113,7 @@ Download the last stable version for Ubuntu 16.04+ (.deb file).
 1.39.0 as I wrote this line (July 2023).
 
 ```sh
-cd ~/Flo/Downloads && \
+cd ~/Fab/Downloads && \
 sudo dpkg -i mongodb-compass_1.39.0_amd64.deb
 ```
 
@@ -1181,14 +1181,14 @@ alias ss="ssh-add ~/.ssh/id_ed25519"
 
 <br /><br /><br />
 
-## ~/Flo/Dotfiles as git repo
+## ~/Fab/Dotfiles as git repo
 
 https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories
 
 1. Initialize `Dotfiles` folder as a git repo and add `Dotfiles` github remote repo.
 
 ```sh
-cd ~/Flo/Dotfiles && \
+cd ~/Fab/Dotfiles && \
 git init && \
 git remote add origin git@github.com:Flo-Slv/Dotfiles.git && \
 git checkout -b main
@@ -1199,7 +1199,7 @@ git checkout -b main
 3. Remove and pull from remote
 
 ```sh
-cd ~/Flo/Dotfiles && \
+cd ~/Fab/Dotfiles && \
 rm -rf alacritty/ git/ gitui/ kitty/ neovim/ i3/ polybar/ rofi/ starship/ zsh/ tmux/.tmux.conf tmux/.tmux.powerlinerc tmux/.tmux/tmux-powerline-custom-themes/ && \
 git pull origin main
 ```
@@ -1250,11 +1250,11 @@ Here is basics usages
 ```sh
 # Specify the target with -t parameter.
 # Example with the i3 directory:
-cd ~/Flo/Dotfiles/i3wm/i3
+cd ~/Fab/Dotfiles/i3wm/i3
 stow -t ~/.config i3
 
 # "Unstow" with -D parameter.
-cd ~/Flo/Dotfiles/i3wm/i3
+cd ~/Fab/Dotfiles/i3wm/i3
 stow -t ~/.config -D i3
 ```
 
