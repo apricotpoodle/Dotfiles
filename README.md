@@ -209,7 +209,27 @@ sudo apt autoclean -y
 ```
 
 <br /><br /><br />
+## How to install Python 3 in Debian
+### Step 1: Update Package Repositories
+```sh
+sudo apt update
+```
+### Step 3: Install Python3 on Debian
 
+
+At the time of writing this guide, the latest Python release is Python 3.11 which was released on December 6, 2022.
+However, the latest version that is currently provided by Debian repositories is Python 3.9.
+Depending on your requirements, you choose to either install the version provided by default in the repository or install the latest version provided the Python.
+To install Python from Debian’s APT repository, run the command:
+
+```sh
+sudo apt install python3 -y && \
+sudo apt autoremove -y && \
+sudo apt autoclean -y
+```
+
+
+<br /><br /><br />
 ## OH-MY-ZSH - install
 
 https://ohmyz.sh/#install
