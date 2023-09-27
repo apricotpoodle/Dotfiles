@@ -1505,7 +1505,7 @@ git clone https://github.com/username/appName
 
 ### Git will never ask for your credentials again.
 ```git
-git config user.name "userName"
+git config user.name "userEmailAdress"
 git config user.password "userPassword"
 git config --global credential.helper store
 git config --global credential.helper cache
