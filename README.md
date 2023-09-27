@@ -1496,3 +1496,11 @@ ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$)
 printenv
 ```
 ## dockerizedApp
+
+### Git will never ask for your credentials again.
+```git
+git config --global credential.helper store
+git config --global credential.helper cache
+git config credential.helper store
+git config credential.helper cache
+```
