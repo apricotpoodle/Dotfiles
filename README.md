@@ -1497,10 +1497,33 @@ printenv
 ```
 ## dockerizedApp
 
+### First time creating the repo
+
+```git
+git clone https://github.com/username/appName
+```
+
 ### Git will never ask for your credentials again.
 ```git
+git config user.name "userName"
+git config user.password "userPassword"
 git config --global credential.helper store
 git config --global credential.helper cache
 git config credential.helper store
 git config credential.helper cache
+```
+Now you need to 
+```
+git pull
+```
+
+as cakephp user in docker container.
+
+### Command for migration and rollback
+
+```bash
+$ bin/cake migrations migrate
+```
+```bash
+$ bin/cake migrations rollback -d 200000000000
 ```
