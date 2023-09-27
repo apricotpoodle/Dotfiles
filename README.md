@@ -1376,7 +1376,7 @@ https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-
 ```sh
 cd ~/Fab/Dotfiles && \
 git init && \
-git remote add origin git@github.com:Flo-Slv/Dotfiles.git && \
+git remote add origin git@github.com:bouillerot/Dotfiles.git && \
 git checkout -b main
 ```
 
