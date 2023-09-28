@@ -1164,6 +1164,44 @@ Close and re open terminal.
 
 ## GIT - config
 
+### Create Personal Access Token on GitHub
+    From your GitHub account, go to Settings → Developer Settings → Personal Access Token → Generate New Token (Give your password) → Fillup the form → click Generate token → Copy the generated Token, it will be something like ghp_sFhFsSHhTzMDreGRLjmks4Tzuzgthdvfsrta
+
+#### For a Linux-based OS
+    For Linux, you need to configure the local GIT client with a username and email address,
+```bash
+    $ git config --global user.name "your_github_username"
+```
+```bash
+    $ git config --global user.email "your_github_email"
+```
+```bash
+    $ git config -l
+```
+Once GIT is configured, we can begin using it to access GitHub. Example:
+```bash
+    $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+    > Cloning into `YOUR-REPOSITORY`...
+    Username: <type your username>
+    Password: <type your password or personal access token (GitHub)
+```
+Note :  Linux/Debian (Clone as follows):
+```bash
+    git clone https://<tokenhere>@github.com/<user>/<repo>.git
+```
+Now cache the given record in your computer to remembers the token:
+```bash
+    $ git config --global credential.helper cache
+```
+If needed, anytime you can delete the cache record by:
+```bash
+    $ git config --global --unset credential.helper
+    $ git config --system --unset credential.helper
+```
+Now try to pull with -v to verify
+```bash
+    $ git pull -v
+```
 Just copy/paste those lines into your terminal but change your email and name before type Enter !
 
 ```sh
@@ -1183,7 +1221,49 @@ cd ~/Fab/Dotfiles && \
 stow -t ~/ git
 ```
 
-<br /><br /><br />
+### Useful Git Commands List
+| Command                                                                         |                      Description                            |
+| ------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| git init                                                                        | Initialize a local Git repository                           |
+| git clone repo_url                                                              | Clone public repository                                     |
+| git clone ssh://git@github.com/[username]/[repository-name].git                 | Clone private repository                                    |
+| git status                                                                      | Check status                                                |
+| git add [file-name]                                                             | Add a file to the staging area                              |
+| git add -A                                                                      | Add all new and changed files to the staging area           |
+| git commit -m "[commit message]"                                                | Commit changes                                              |
+| git rm -r [file-name.txt]                                                       | Remove a file (or folder)                                   |
+| git branch                                                                      | List of branches (the asterisk denotes the current branch)  |
+| git branch -a                                                                   | List all branches (local and remote)                        |
+| git branch [branch name]                                                        | Create a new branch                                         |
+| git branch -d [branch name]                                                     | Delete a branch                                             |
+| git branch -D [branch name]                                                     | Delete a branch forcefully                                  |
+| git push origin --delete [branch name]                                          | Delete a remote branch                                      |
+| git checkout -b [branch name]                                                   | Create a new branch and switch to it                        |
+| git checkout -b [branch name] origin/[branch name]                              | Clone a remote branch and switch to it                      |
+| git branch -m [old branch name] [new branch name]                               | Rename a local branch                                       |
+| git checkout [branch name]                                                      | Switch to a branch                                          |
+| git checkout -                                                                  | Switch to the branch last checked out                       |
+| git checkout -- [file-name.txt]                                                 | Discard changes to a file                                   |
+| git merge [branch name]                                                         | Merge a branch into the active branch                       |
+| git merge [source branch] [target branch]                                       | Merge a branch into a target branch                         |
+| git stash                                                                       | Stash changes in a dirty working directory                  |
+| git stash clear                                                                 | Remove all stashed entries                                  |
+| git push origin [branch name]                                                   | Push a branch to your remote repository                     |
+| git push -u origin [branch name]                                                | Push changes to remote repository (and remember the branch) |
+| git push                                                                        | Push changes to remote repository (remembered branch)       |
+| git push origin --delete [branch name]                                          | Delete a remote branch                                      |
+| git pull                                                                        | Update local repository to the newest commit                |
+| git pull origin [branch name]                                                   | Pull changes from remote repository                         |
+| git remote add origin ssh://git@github.com/[username]/[repository-name].git     | Add a remote repository                                     |
+| git remote set-url origin ssh://git@github.com/[username]/[repository-name].git | Set a repository's origin branch  to SSH                    |
+| git log                                                                         | View changes                                                |
+| git log --summary                                                               | View changes (detailed)                                     |
+| git log --oneline                                                               | View changes (briefly)                                      |
+| git diff [source branch] [target branch]                                        | Preview changes before merging                              |
+| git revert commitid                                                             | Revert commit changes                                       |
+| git config --global user.name "your_username"                                   | Set globally Username                                       |
+| git config --global user.email "your_email_address@example.com"                 | Set globally Email id                                       |
+| git config --global --list                                                      | Get global config                                           |
 
 ## GIT-CZ - install and config
 
